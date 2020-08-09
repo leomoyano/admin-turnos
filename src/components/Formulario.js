@@ -13,9 +13,15 @@ const Formulario = () => {
 
 
     //Para actualizar estado de inputs
-    const handleChange = () => {
-        console.log('Escribiendo...');
+    const handleChange = e => {
+        setCita({
+            ...cita,
+            [e.target.name] : e.target.value
+        })
     }
+
+    //Extraer los valores
+    const {mascota, propietario, fecha, hora, sintomas} = cita;
 
     return (
         <Fragment>
@@ -29,6 +35,7 @@ const Formulario = () => {
                     className="u-full-width"
                     placeholder="Nombre de Mascota"
                     onChange={handleChange}
+                    value={mascota}
                 />
                 <label htmlFor="">Nombre Dueño</label>
                 <input
@@ -37,6 +44,7 @@ const Formulario = () => {
                     className="u-full-width"
                     placeholder="Nombre del Dueño de Mascota"
                     onChange={handleChange}
+                    value={propietario}
                 />
                 <label htmlFor="">Fecha</label>
                 <input
@@ -44,6 +52,7 @@ const Formulario = () => {
                     name="fecha"
                     className="u-full-width"
                     onChange={handleChange}
+                    value={fecha}
                 />
                 <label htmlFor="">Hora</label>
                 <input
@@ -51,12 +60,14 @@ const Formulario = () => {
                     name="hora"
                     className="u-full-width"
                     onChange={handleChange}
+                    value={hora}
                 />
                 <label htmlFor="">Sintomas</label>
                 <textarea
                     className="u-full-width"
                     name="sintomas"
                     onChange={handleChange}
+                    value={sintomas}
                 ></textarea>
                 <button
                     type="submit"
