@@ -90,4 +90,5 @@ input[type="time"] {
   text-transform: uppercase;
   text-align: center;
   font-family:  'Staatliches', cursive;
+  border-radius: 5px;
 } 
